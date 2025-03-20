@@ -7,9 +7,11 @@ public class Vehicle {
     private double fuelLevel;
 
     // Constructor
-    public  Vehicle(String name, int speed, double fuelLevel) {
+    public Vehicle(String name, int speed, double fuelLevel) {
         this.name = name;
         this.speed = speed;
         this.fuelLevel = fuelLevel;
     }
+
+
 }
