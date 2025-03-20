@@ -1,4 +1,4 @@
 package vehicle.mgmt;
 
-public class LandVehicle {
-}
+//public class LandVehicle extends Vehicle {
+//}
