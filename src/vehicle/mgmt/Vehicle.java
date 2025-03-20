@@ -1,6 +1,6 @@
 package vehicle.mgmt;
 
-public class Vehicle {
+public abstract class Vehicle {
     // Fields
     private String name;
     private int speed;
