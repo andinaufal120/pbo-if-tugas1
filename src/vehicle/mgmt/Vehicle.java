@@ -6,12 +6,14 @@ public abstract class Vehicle {
     private int speed;
     private double fuelLevel;
 
+
     // Constructor: initialize each fields from caller's arguments (which is the subclasses).
     public Vehicle(String name, int speed, double fuelLevel) {
         this.name = name;
         this.speed = speed;
         this.fuelLevel = fuelLevel;
     }
+
 
     // Getter: will return name, speed, fuelLevel to caller.
     public String getName() {
@@ -25,6 +27,21 @@ public abstract class Vehicle {
     public double getFuelLevel() {
         return fuelLevel;
     }
+
+
+    // Setter: I can't access instance variable directly.
+    public void setName(String name) {
+        this.name = name; // can be like this; "this" keyword refers to the instance var.
+    }
+
+    public void setSpeed(int newSpeed) {
+        speed = newSpeed; // but I prefer this.
+    }
+
+    public void setFuelLevel(double newFuelLevel) {
+        fuelLevel = newFuelLevel;
+    }
+
 
     // Abstract methods: don't have method body, must be implemented by subclasses.
     public abstract void move();
