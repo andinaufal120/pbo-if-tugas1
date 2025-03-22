@@ -6,7 +6,7 @@ public abstract class Vehicle {
     private int speed;
     private double fuelLevel;
 
-    // Constructor: initialize each fields.
+    // Constructor: initialize each fields from caller's arguments (which is the subclasses).
     public Vehicle(String name, int speed, double fuelLevel) {
         this.name = name;
         this.speed = speed;
