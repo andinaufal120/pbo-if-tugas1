@@ -11,7 +11,7 @@ public class LandVehicle extends Vehicle {
 
     @Override // optional, but will make sure we have a matching signature with parent.
     public void move() {
-        System.out.println(getName() + " is moving on land with " +  wheels + " wheels at " + getSpeed() + " km/h speed");
+        System.out.println(getName() + " is moving on land with " +  wheels + " wheels at " + getSpeed() + " km/h speed.");
     }
 
     @Override
