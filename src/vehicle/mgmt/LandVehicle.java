@@ -29,13 +29,12 @@ public class LandVehicle extends Vehicle {
 
     @Override
     public void stop() {
-        System.out.println(getName() + " is now stopping...");
-        System.out.println(getName() + " is stopped.");
+        System.out.println(getName() + " is now stopping...Stopped.");
     }
 
     @Override
     public void maxSpeed() {
-        System.out.println(getName() + " is moving at max speed " + getSpeed() + " km/h.");
+        System.out.println(getName() + " is moving at max speed " + getMaxSpeed() + " km/h.");
     }
 
     // Refuelable interface's methods implementation
