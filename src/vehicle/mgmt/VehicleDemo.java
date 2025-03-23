@@ -9,5 +9,11 @@ public class VehicleDemo {
                 new LandVehicle("Bemo", 30, 30, 3),
                 new WaterVehicle("Sailor Boat", 10, 0, false)
         };
+
+        for (Vehicle vehicle : vehicles) {
+            vehicle.move();
+            vehicle.calculateFuelConsumption(100);
+            System.out.println();
+        }
     }
 }
