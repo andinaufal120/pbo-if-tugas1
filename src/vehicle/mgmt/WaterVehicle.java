@@ -5,8 +5,8 @@ public class WaterVehicle extends Vehicle {
     private boolean hasPropeller;
 
     // Subclass constructor: takes args value, call the super's constructor and pass the value.
-    public WaterVehicle(String name, int speed, double fuelLevel, boolean hasPropeller) {
-        super(name, speed, fuelLevel);
+    public WaterVehicle(String name, int speed, double fuelLevel, boolean hasPropeller, int maxSpeed) {
+        super(name, speed, fuelLevel, maxSpeed);
         this.setHasPropeller(hasPropeller);
     }
 
@@ -35,6 +35,17 @@ public class WaterVehicle extends Vehicle {
         setFuelLevel(newFuelLevel);
 
         System.out.println("Fuel consumed for " + distance + " km: " + fuelConsumption + ". Remaining fuel level: " + getFuelLevel());
+    }
+
+    @Override
+    public void stop() {
+        System.out.println(getName() + " is now stopping...");
+        System.out.println(getName() + " is stopped.");
+    }
+
+    @Override
+    public void maxSpeed() {
+        System.out.println(getName() + " is moving at max speed " + getSpeed() + " km/h.");
     }
 
     // Refuelable interface's methods implementation

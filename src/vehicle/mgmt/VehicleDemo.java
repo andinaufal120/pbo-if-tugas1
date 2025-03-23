@@ -3,11 +3,11 @@ package vehicle.mgmt;
 public class VehicleDemo {
     public static void main(String[] args) {
         Vehicle[] vehicles = {
-                new LandVehicle("LCGC", -60, 40, 4),
-                new WaterVehicle("Speedboat", 70, -1000, true),
-                new LandVehicle("Motor Pak Cahyo", 240, 100, 2),
-                new LandVehicle("Bemo", 30, 30, 3),
-                new WaterVehicle("Sailor Boat", 10, 0, false)
+                new LandVehicle("LCGC", -60, 40, 4, 120),
+                new WaterVehicle("Speedboat", 70, -1000, true, 300),
+                new LandVehicle("Motor Pak Cahyo", 240, 100, 2, 300_000),
+                new LandVehicle("Bemo", 30, 30, 3, 60),
+                new WaterVehicle("Sailor Boat", 10, 0, false, 30)
         };
 
         for (Vehicle vehicle : vehicles) {

@@ -5,8 +5,8 @@ public class LandVehicle extends Vehicle {
     private final int wheels; // I don't think someone want to change the wheels number once instantiated.
 
     // Subclass constructor: takes args value, call the super's constructor and pass the value.
-    public LandVehicle(String name, int speed, double fuelLevel, int wheels) {
-        super(name, speed, fuelLevel);
+    public LandVehicle(String name, int speed, double fuelLevel, int wheels, int maxSpeed) {
+        super(name, speed, fuelLevel, maxSpeed);
         this.wheels = validateWheels(wheels);
     }
 
@@ -25,6 +25,17 @@ public class LandVehicle extends Vehicle {
         setFuelLevel(newFuelLevel);
 
         System.out.println("Fuel consumed for " + distance + " km: " + fuelConsumption + ". Remaining fuel level: " + getFuelLevel());
+    }
+
+    @Override
+    public void stop() {
+        System.out.println(getName() + " is now stopping...");
+        System.out.println(getName() + " is stopped.");
+    }
+
+    @Override
+    public void maxSpeed() {
+        System.out.println(getName() + " is moving at max speed " + getSpeed() + " km/h.");
     }
 
     // Refuelable interface's methods implementation

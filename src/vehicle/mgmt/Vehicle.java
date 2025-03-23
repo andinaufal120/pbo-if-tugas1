@@ -5,13 +5,15 @@ public abstract class Vehicle implements Refuelable {
     private String name;
     private int speed;
     private double fuelLevel;
+    private int maxSpeed;
 
 
     // Constructor: initialize each fields from caller's arguments (which is the subclasses).
-    public Vehicle(String name, int speed, double fuelLevel) {
+    public Vehicle(String name, int speed, double fuelLevel, int maxSpeed) {
         this.name = name;
         this.speed = validateSpeed(speed);
         this.fuelLevel = validateFuelLevel(fuelLevel);
+        this.maxSpeed = validateSpeed(maxSpeed);
     }
 
 
@@ -47,6 +49,12 @@ public abstract class Vehicle implements Refuelable {
     public abstract void move();
 
     public abstract void calculateFuelConsumption(double distance);
+
+
+    // Additional features: extra abstract methods
+    public abstract void stop();
+
+    public abstract void maxSpeed();
 
 
     // Additional features: extra validation
