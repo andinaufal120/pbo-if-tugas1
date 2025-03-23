@@ -2,7 +2,7 @@ package vehicle.mgmt;
 
 public class LandVehicle extends Vehicle {
     // A more specific field
-    int wheels;
+    private final int wheels; // I don't think someone want to change the wheels number once instantiated.
 
     // Subclass constructor: takes args value, call the super's constructor and pass the value.
     public LandVehicle(String name, int speed, double fuelLevel, int wheels) {

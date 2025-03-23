@@ -2,17 +2,27 @@ package vehicle.mgmt;
 
 public class WaterVehicle extends Vehicle {
     // A more specific field
-    boolean hasPropeller;
+    private boolean hasPropeller;
 
     // Subclass constructor: takes args value, call the super's constructor and pass the value.
     public WaterVehicle(String name, int speed, double fuelLevel, boolean hasPropeller) {
         super(name, speed, fuelLevel);
+        this.setHasPropeller(hasPropeller);
+    }
+
+    // Getter for WaterVehicle field
+    public boolean isHasPropeller() {
+        return hasPropeller;
+    }
+
+    // Setter for WaterVehicle field
+    public void setHasPropeller(boolean hasPropeller) {
         this.hasPropeller = hasPropeller;
     }
 
     @Override // optional, but will make sure we have a matching signature with parent.
     public void move() {
-        System.out.println(getName() + " is moving on water at " + getSpeed() + " km/h speed, use propeller: " + hasPropeller + ".");
+        System.out.println(getName() + " is moving on water at " + getSpeed() + " km/h speed, use propeller: " + isHasPropeller() + ".");
     }
 
     @Override
