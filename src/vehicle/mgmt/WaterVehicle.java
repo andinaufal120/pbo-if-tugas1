@@ -26,4 +26,16 @@ public class WaterVehicle extends Vehicle {
 
         System.out.println("Fuel consumed for " + distance + " km: " + fuelConsumption + ". Remaining fuel level: " + getFuelLevel());
     }
+
+    // Refuelable interface's methods implementation
+    @Override
+    public void refuel(double amount) {
+        double newFuelLevel = getFuelLevel() + amount;
+        setFuelLevel(newFuelLevel);
+    }
+
+    @Override
+    public boolean isFuelLow() {
+        return getFuelLevel() < 20;
+    }
 }
