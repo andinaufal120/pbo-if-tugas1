@@ -20,8 +20,8 @@ public class LandVehicle extends Vehicle {
         double fuelConsumption = distance / 10;
         double newFuelLevel = getFuelLevel() - fuelConsumption;
 
-        // Will assign newFuelLevel only if it's positive. Otherwise, assign 0.
-        newFuelLevel = (newFuelLevel < 0) ? 0 : newFuelLevel;
+        // Will assign newFuelLevel only if it passed the validation.
+        newFuelLevel = validateFuelLevel(newFuelLevel);
         setFuelLevel(newFuelLevel);
 
         System.out.println("Fuel consumed for " + distance + " km: " + fuelConsumption + ". Remaining fuel level: " + getFuelLevel());
@@ -36,8 +36,8 @@ public class LandVehicle extends Vehicle {
         // Adds the refuel amount to current fuel level.
         double newFuelLevel = getFuelLevel() + amount;
 
-        // The fuel probably spilled above than 100.
-        newFuelLevel = (newFuelLevel > 100) ? 100 : newFuelLevel;
+        // Will assign newFuelLevel only if it passed the validation.
+        newFuelLevel = validateFuelLevel(newFuelLevel);
         setFuelLevel(newFuelLevel);
     }
 
