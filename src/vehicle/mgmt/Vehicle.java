@@ -11,7 +11,7 @@ public abstract class Vehicle implements Refuelable {
     public Vehicle(String name, int speed, double fuelLevel) {
         this.name = name;
         this.speed = speed;
-        this.fuelLevel = fuelLevel;
+        this.fuelLevel = validateFuelLevel(fuelLevel);
     }
 
 
@@ -39,7 +39,7 @@ public abstract class Vehicle implements Refuelable {
     }
 
     public void setFuelLevel(double newFuelLevel) {
-        fuelLevel = newFuelLevel;
+        fuelLevel = validateFuelLevel(newFuelLevel);
     }
 
 
@@ -47,4 +47,16 @@ public abstract class Vehicle implements Refuelable {
     public abstract void move();
 
     public abstract void calculateFuelConsumption(double distance);
+
+
+    // Additional features: extra validation
+    public double validateFuelLevel(double newValue) {
+        if (newValue < 0) {
+            return 0;
+        } else if (newValue > 100) {
+            return 100;
+        } else {
+            return newValue;
+        }
+    }
 }
