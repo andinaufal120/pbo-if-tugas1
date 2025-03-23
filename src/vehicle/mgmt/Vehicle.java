@@ -10,7 +10,7 @@ public abstract class Vehicle implements Refuelable {
     // Constructor: initialize each fields from caller's arguments (which is the subclasses).
     public Vehicle(String name, int speed, double fuelLevel) {
         this.name = name;
-        this.speed = speed;
+        this.speed = validateSpeed(speed);
         this.fuelLevel = validateFuelLevel(fuelLevel);
     }
 
@@ -35,7 +35,7 @@ public abstract class Vehicle implements Refuelable {
     }
 
     public void setSpeed(int newSpeed) {
-        speed = newSpeed; // but I prefer this.
+        speed = validateSpeed(newSpeed); // but I prefer this.
     }
 
     public void setFuelLevel(double newFuelLevel) {
@@ -58,5 +58,10 @@ public abstract class Vehicle implements Refuelable {
         } else {
             return newValue;
         }
+    }
+
+    public int validateSpeed(int newValue) {
+        // reversing doesn't make speed negative, unless we're talking about velocity.
+        return (newValue < 0) ? Math.abs(newValue) : newValue;
     }
 }
