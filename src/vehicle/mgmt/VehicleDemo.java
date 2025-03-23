@@ -15,5 +15,14 @@ public class VehicleDemo {
             vehicle.calculateFuelConsumption(100);
             System.out.println();
         }
+
+        // Refuel vehicles if isFuelLow true.
+        for (Vehicle vehicle : vehicles) {
+            if (vehicle.isFuelLow()) {
+                System.out.println(vehicle.getName() + "'s fuel is low. Refueling 30%...");
+                vehicle.refuel(30);
+                System.out.println("Refueling completed! The fuel is now " + vehicle.getFuelLevel() + "%.");
+            }
+        }
     }
 }
