@@ -30,7 +30,14 @@ public class WaterVehicle extends Vehicle {
     // Refuelable interface's methods implementation
     @Override
     public void refuel(double amount) {
+        // Make sure the amount isn't negative, otherwise it's not called "refueling".
+        amount = (amount < 0) ? 0 : amount;
+
+        // Adds the refuel amount to current fuel level.
         double newFuelLevel = getFuelLevel() + amount;
+
+        // The fuel probably spilled above than 100.
+        newFuelLevel = (newFuelLevel > 100) ? 100 : newFuelLevel;
         setFuelLevel(newFuelLevel);
     }
 
