@@ -12,6 +12,8 @@ public class VehicleDemo {
 
         for (Vehicle vehicle : vehicles) {
             vehicle.move();
+            vehicle.maxSpeed();
+            vehicle.stop();
             vehicle.calculateFuelConsumption(100);
             System.out.println();
         }
