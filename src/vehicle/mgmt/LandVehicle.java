@@ -19,6 +19,9 @@ public class LandVehicle extends Vehicle {
     public void calculateFuelConsumption(double distance) {
         double fuelConsumption = distance / 10;
         double newFuelLevel = getFuelLevel() - fuelConsumption;
+
+        // Will assign newFuelLevel only if it's positive. Otherwise, assign 0.
+        newFuelLevel = (newFuelLevel < 0) ? 0 : newFuelLevel;
         setFuelLevel(newFuelLevel);
 
         System.out.println("Fuel consumed for " + distance + " km: " + fuelConsumption + ". Remaining fuel level: " + getFuelLevel());
