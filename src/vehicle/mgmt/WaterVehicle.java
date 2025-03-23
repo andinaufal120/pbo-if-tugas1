@@ -18,7 +18,7 @@ public class WaterVehicle extends Vehicle {
     @Override
     public void calculateFuelConsumption(double distance) {
         double fuelConsumption = distance / 8;
-        double newFuelLevel = getFuelLevel() + fuelConsumption;
+        double newFuelLevel = getFuelLevel() - fuelConsumption;
         setFuelLevel(newFuelLevel);
 
         System.out.println("Fuel consumed for " + distance + " km: " + fuelConsumption + ". Remaining fuel level: " + getFuelLevel());
