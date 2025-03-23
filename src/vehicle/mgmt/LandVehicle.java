@@ -7,7 +7,7 @@ public class LandVehicle extends Vehicle {
     // Subclass constructor: takes args value, call the super's constructor and pass the value.
     public LandVehicle(String name, int speed, double fuelLevel, int wheels) {
         super(name, speed, fuelLevel);
-        this.wheels = wheels;
+        this.wheels = validateWheels(wheels);
     }
 
     @Override // optional, but will make sure we have a matching signature with parent.
@@ -44,5 +44,10 @@ public class LandVehicle extends Vehicle {
     @Override
     public boolean isFuelLow() {
         return getFuelLevel() < 20;
+    }
+
+    // LandVehicle specific extra validation: wheels
+    public int validateWheels(int wheels) {
+        return (wheels < 0) ? 0 : wheels;
     }
 }
