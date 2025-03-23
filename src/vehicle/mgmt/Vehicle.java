@@ -30,6 +30,9 @@ public abstract class Vehicle implements Refuelable {
         return fuelLevel;
     }
 
+    public int getMaxSpeed() {
+        return maxSpeed;
+    }
 
     // Setter: I can't access instance variable directly.
     public void setName(String name) {
@@ -44,6 +47,9 @@ public abstract class Vehicle implements Refuelable {
         fuelLevel = validateFuelLevel(newFuelLevel);
     }
 
+    public void setMaxSpeed(int maxSpeed) {
+        this.maxSpeed = validateSpeed(maxSpeed);
+    }
 
     // Abstract methods: don't have method body, must be implemented by subclasses.
     public abstract void move();
