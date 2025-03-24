@@ -1,5 +1,10 @@
 package vehicle.mgmt;
 
+/**
+ * VehicleDemo: this is the main class.
+ *
+ * @author Andi Naufal Nurfadhil
+ */
 public class VehicleDemo {
     public static void main(String[] args) {
         Vehicle[] vehicles = {

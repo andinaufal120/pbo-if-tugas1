@@ -1,5 +1,10 @@
 package vehicle.mgmt;
 
+/**
+ * The LandVehicle class is inheriting abstract class Vehicle. This class have specific field and methods implementation.
+ *
+ * @author Andi Naufal Nurfadhil
+ */
 public class LandVehicle extends Vehicle {
     // A more specific field
     private final int wheels; // I don't think someone want to change the wheels number once instantiated.
@@ -12,7 +17,7 @@ public class LandVehicle extends Vehicle {
 
     @Override // optional, but will make sure we have a matching signature with parent.
     public void move() {
-        System.out.println(getName() + " is moving on land with " +  wheels + " wheels at " + getSpeed() + " km/h speed.");
+        System.out.println(getName() + " is moving on land with " + wheels + " wheels at " + getSpeed() + " km/h speed.");
     }
 
     @Override

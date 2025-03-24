@@ -1,5 +1,10 @@
 package vehicle.mgmt;
 
+/**
+ * The abstract class Vehicle is the parent of subclass LandVehicle and WaterVehicle, so abstract methods in this class must be implemented.
+ *
+ * @author Andi Naufal Nurfadhil
+ */
 public abstract class Vehicle implements Refuelable {
     // Fields
     private String name;
@@ -51,19 +56,38 @@ public abstract class Vehicle implements Refuelable {
         this.maxSpeed = validateSpeed(maxSpeed);
     }
 
+
     // Abstract methods: don't have method body, must be implemented by subclasses.
+
+    /**
+     * Will move vehicles.
+     */
     public abstract void move();
 
+    /**
+     * Given a double distance, it will calculate fuel consumption, decrease the fuelLevel, and return double fuelConsumption.
+     */
     public abstract double calculateFuelConsumption(double distance);
 
 
     // Additional features: extra abstract methods
+
+    /**
+     * Will stop the vehicle immediately.
+     */
     public abstract void stop();
 
+    /**
+     * Will max out the vehicle accelerator.
+     */
     public abstract void maxSpeed();
 
 
     // Additional features: extra validation
+
+    /**
+     * This will validate that the given value is not a negative value or exceed 100 (which is the fuel is probably spilled out).
+     */
     public double validateFuelLevel(double newValue) {
         if (newValue < 0) {
             return 0;
@@ -74,6 +98,9 @@ public abstract class Vehicle implements Refuelable {
         }
     }
 
+    /**
+     * No negative number allowed.
+     */
     public int validateSpeed(int newValue) {
         // reversing doesn't make speed negative, unless we're talking about velocity.
         return (newValue < 0) ? Math.abs(newValue) : newValue;

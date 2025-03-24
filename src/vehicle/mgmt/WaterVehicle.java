@@ -1,5 +1,10 @@
 package vehicle.mgmt;
 
+/**
+ * The WaterVehicle class is inheriting abstract class Vehicle. This class have specific field and methods implementation.
+ *
+ * @author Andi Naufal Nurfadhil
+ */
 public class WaterVehicle extends Vehicle {
     // A more specific field
     private boolean hasPropeller;
