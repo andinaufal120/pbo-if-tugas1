@@ -54,7 +54,7 @@ public abstract class Vehicle implements Refuelable {
     // Abstract methods: don't have method body, must be implemented by subclasses.
     public abstract void move();
 
-    public abstract void calculateFuelConsumption(double distance);
+    public abstract double calculateFuelConsumption(double distance);
 
 
     // Additional features: extra abstract methods

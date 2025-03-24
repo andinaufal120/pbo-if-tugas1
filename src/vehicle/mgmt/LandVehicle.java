@@ -16,7 +16,7 @@ public class LandVehicle extends Vehicle {
     }
 
     @Override
-    public void calculateFuelConsumption(double distance) {
+    public double calculateFuelConsumption(double distance) {
         double fuelConsumption = distance / 10;
         double newFuelLevel = getFuelLevel() - fuelConsumption;
 
@@ -25,6 +25,7 @@ public class LandVehicle extends Vehicle {
         setFuelLevel(newFuelLevel);
 
         System.out.println("Fuel consumed for " + distance + " km: " + fuelConsumption + ". Remaining fuel level: " + getFuelLevel());
+        return fuelConsumption;
     }
 
     @Override
